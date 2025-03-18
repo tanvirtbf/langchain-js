@@ -7,3 +7,7 @@ import { OpenAI } from "@langchain/openai";
 const llm = new OpenAI({
   model: "gpt-3.5-turbo-instruct",
 });
+
+const response = await llm.invoke("who is prime minister of bangladesh?")
+console.log("Response : ", response)
+
