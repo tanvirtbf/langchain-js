@@ -8,3 +8,14 @@ import { PromptTemplate } from '@langchain/core/prompts'
 
 const llm = new OpenAI({})
 
+
+// Example 1 - Prompt having No Input Variable
+const noInputPrompt = new PromptTemplate({
+  inputVariables : [],
+  template: "Tell me a trick of Javascript"
+})
+const formattedNoInputPrompt = await noInputPrompt.format()
+// console.log("No Input Prompt : ", formattedNoInputPrompt)
+
+const response = await llm.invoke(formattedNoInputPrompt)
+console.log("Response : ", response)
