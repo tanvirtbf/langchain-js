@@ -20,15 +20,15 @@ const llm = new OpenAI({})
 // const response = await llm.invoke(formattedNoInputPrompt)
 // console.log("Response : ", response)
 
-// Example 2 - Prompt having One Input Variable
-const OneInputPrompt = new PromptTemplate({
-  inputVariables : ["language"],
-  template: "Tell me a trick of {language}"
-})
-const formattedOneInputPrompt = await OneInputPrompt.format({
-  language : "C++"
-})
-// console.log("No Input Prompt : ", formattedOneInputPrompt)
+// // Example 2 - Prompt having One Input Variable
+// const OneInputPrompt = new PromptTemplate({
+//   inputVariables : ["language"],
+//   template: "Tell me a trick of {language}"
+// })
+// const formattedOneInputPrompt = await OneInputPrompt.format({
+//   language : "C++"
+// })
+// // console.log("No Input Prompt : ", formattedOneInputPrompt)
 
-const response = await llm.invoke(formattedOneInputPrompt)
-console.log("Response : ", response)
+// const response = await llm.invoke(formattedOneInputPrompt)
+// console.log("Response : ", response)
