@@ -37,15 +37,8 @@ const llm = new OpenAI({})
 // const response = await llm.invoke(formattedOneInputPrompt)
 // console.log("Response : ", response)
 
-const oneInputPrompt = new PromptTemplate({
-  inputVariables: ['language'],
-  template: "Tell me a trick of {language}"
-})
-const formateedOneInputPrompt = await oneInputPrompt.format({
-  language: "C++"
-})
-const response = await llm.invoke(formateedOneInputPrompt)
-console.log(response)
+
+
 
 
 // // Example 3 - Prompt having Multiple Input Variable
@@ -61,6 +54,18 @@ console.log(response)
 
 // const response = await llm.invoke(formattedMultiInputPrompt)
 // console.log("Response : ", response)
+
+const multiInputPrompt = new PromptTemplate({
+  inputVariables: ["language","topic"],
+  template: "Tell me a trick of {language}, and topic is {topic}"
+})
+
+const formattedMultiInputPrompt = await multiInputPrompt.format({
+  language: "Javascript",
+  topic: "Array"
+})
+const response = await llm.invoke(formattedMultiInputPrompt)
+console.log(response)
 
 
 
