@@ -20,16 +20,6 @@ const llm = new OpenAI({})
 // const response = await llm.invoke(formattedNoInputPrompt)
 // console.log("Response : ", response)
 
-const noInputPrompt = new PromptTemplate({
-  inputVariables: [],
-  template : "Tell me a trick of Javascript"
-})
-const formattedMultiInputPrompt = await noInputPrompt.format()
-// console.log(formattedMultiInputPrompt)
-
-const response = await llm.invoke(formattedMultiInputPrompt)
-console.log(response)
-
 
 
 
