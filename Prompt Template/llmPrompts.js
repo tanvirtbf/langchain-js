@@ -10,15 +10,29 @@ const llm = new OpenAI({})
 
 
 // Example 1 - Prompt having No Input Variable
-const noInputPrompt = new PromptTemplate({
-  inputVariables : [],
-  template: "Tell me a trick of Javascript"
-})
-const formattedNoInputPrompt = await noInputPrompt.format()
+// const noInputPrompt = new PromptTemplate({
+//   inputVariables : [],
+//   template: "Tell me a trick of Javascript"
+// })
+// const formattedNoInputPrompt = await noInputPrompt.format()
 // console.log("No Input Prompt : ", formattedNoInputPrompt)
 
-const response = await llm.invoke(formattedNoInputPrompt)
-console.log("Response : ", response)
+// const response = await llm.invoke(formattedNoInputPrompt)
+// console.log("Response : ", response)
+
+const noInputPrompt = new PromptTemplate({
+  inputVariables: [],
+  template : "Tell me a trick of Javascript"
+})
+const formattedMultiInputPrompt = await noInputPrompt.format()
+// console.log(formattedMultiInputPrompt)
+
+const response = await llm.invoke(formattedMultiInputPrompt)
+console.log(response)
+
+
+
+
 
 // // Example 2 - Prompt having One Input Variable
 // const OneInputPrompt = new PromptTemplate({
@@ -33,6 +47,10 @@ console.log("Response : ", response)
 // const response = await llm.invoke(formattedOneInputPrompt)
 // console.log("Response : ", response)
 
+
+
+
+
 // // Example 3 - Prompt having Multiple Input Variable
 // const MultiInputPrompt = new PromptTemplate({
 //   inputVariables : ["language", "topic"],
@@ -46,6 +64,9 @@ console.log("Response : ", response)
 
 // const response = await llm.invoke(formattedMultiInputPrompt)
 // console.log("Response : ", response)
+
+
+
 
 // Example 4 - Prompt Template - No input variable manually
 // const template = "Tell me a trick of {language} from {topic}"
